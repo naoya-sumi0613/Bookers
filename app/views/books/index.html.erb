@@ -1,0 +1,35 @@
+<h1>Books</h1>
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Body</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @books.each do |book| %>
+		<tr>
+			<td><%= book.Title %></td>
+			<td><%= book.Body %></td>
+			<td>show</td>
+			<td>edit</td>
+			<td>destroy</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<h1>New book</h1>
+
+<%= form_for(@book) do |f| %>
+
+	<h2>Title</h2>
+	<%= f.text_field :Title %>
+
+	<h2>Body</h2>
+	<%= f.text_area :Body %>
+
+	<%= f.submit 'Create Book' %>
+<% end %>
