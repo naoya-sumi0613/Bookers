@@ -1,3 +1,7 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
 <h1>Editing Book</h1>
 <%= form_for(@book) do |f| %>
 	<% if @book.errors.count >= 1 %>
@@ -10,9 +14,9 @@
 			<% end %>
 		</ul>
 	<p>Title</p>
-	<%= f.text_field :Title %>
+	<%= f.text_field :title %>
 	<p>Body</p>
-	<%= f.text_area :Body %>
+	<%= f.text_area :body %>
 	<%= f.submit 'Update Book' %>
 <% end %>
 

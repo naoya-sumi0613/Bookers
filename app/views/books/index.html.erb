@@ -1,3 +1,7 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
 <h1>Books</h1>
 <table>
 	<thead>
@@ -12,8 +16,8 @@
 	<tbody>
 		<% @books.each do |book| %>
 		<tr>
-			<td><%= book.Title %></td>
-			<td><%= book.Body %></td>
+			<td><%= book.title %></td>
+			<td><%= book.body %></td>
 			<td><p><%= link_to "Show", book_path(book) %></p></td>
 			<td><p><%= link_to "Edit", edit_book_path(book) %></p></td>
 			<td><%= link_to "destroy", book_path(book), method: :delete, data: { confirm: 'Are you sure?'} %></td>
@@ -34,10 +38,10 @@
 			<% end %>
 		</ul>
 	<h2>Title</h2>
-	<%= f.text_field :Title %>
+	<%= f.text_field :title %>
 
 	<h2>Body</h2>
-	<%= f.text_area :Body %>
+	<%= f.text_area :body %>
 
 	<%= f.submit 'Create Book' %>
 <% end %>
